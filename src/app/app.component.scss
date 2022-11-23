@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+
+.card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.names-list {
+    border: 1px solid #ccc;
+    height: 100px;
+}
+
+.name-input {
+    width: 100%;
+}
+
+.add-btn {
+    display: block;
+    width: 100%;
+    color: white;
+}
+
+.team-number {
+    width: 50%;
+}
+
+.generate-btn {
+    width: 50%;
+    color: white;
+    background-color: #018081;
+}
