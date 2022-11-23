@@ -3,22 +3,20 @@
     <h1 class="text-5xl font-bold my-5 sm: text-center">Team Generator</h1>
 
     <ul class="list-none names-list my-5">
-      <li>Laith Harb</li>
-      <li>Vincent Gatho</li>
+      <li *ngFor="let member of members">{{ member }}</li>
     </ul>
 
     <div>
-      <input
+      <input #memberName
         class="name-input mt-1 px-3 py-1 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full sm:text-sm focus:ring-1"
-        type="text" placeholder="Name" />
-      <button class="rounded-none bg-blue-800 add-btn my-2 py-0.9">Add</button>
+        type="text" placeholder="Name" [value]="newMemberName" (input)="memberNameInput(memberName.value)" />
+      <button (click)="onAddMember()" class="rounded-none bg-blue-800 add-btn my-2 py-0.9">Add</button>
     </div>
 
-    <div>
-      <input
-        class="team-number mt-1 px-3 py-0.9 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1"
-        type="text" placeholder="# of teams" />
+    <div class="number-of-teams-div">
+      <input class="team-number px-3 py-0.9" type="text" placeholder="# of teams" />
       <button class="rounded-none generate-btn">Generate</button>
+      <p *ngIf="errorMsg" class="text-base font-bold text-red-600 my-3">{{ errorMsg }}</p>
     </div>
   </div>
 </div>

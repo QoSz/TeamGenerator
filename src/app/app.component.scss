@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -15,7 +19,8 @@
 
 .names-list {
     border: 1px solid #ccc;
-    height: 100px;
+    height: 10em;
+    padding: 0.8rem;
 }
 
 .name-input {
